@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Soundcloud comments",
+  "version": "0.0.1",
+  "description": "This extension orders user comments based on time",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.soundcloud.com/*"],
+      "css": ["style.css"],
+      "js": ["script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "*://*.soundcloud.com/*"
+  ]
+}
