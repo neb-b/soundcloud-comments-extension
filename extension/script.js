@@ -22,6 +22,7 @@ function millisToMinutesAndSeconds(millis) {
 
 function updatePage(url) {
   function createComment(commentData) {
+    console.log('comentData', commentData);
 
     /*
     <li commentContainer>
@@ -42,8 +43,9 @@ function updatePage(url) {
 
     const commentContent = document.createElement('div')
 
-    const userName = document.createElement('div')
+    const userName = document.createElement('a')
     userName.innerHTML = commentData.user.username
+    userName.href = commentData.user.permalink_url
     userName.className = 'ce--comment-username'
 
     const bodyEl = document.createElement('div')

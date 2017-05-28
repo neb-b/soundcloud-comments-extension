@@ -29,8 +29,12 @@
 }
 
 .ce--comment-username {
-  color: #868686;
+  color: #868686 !important;
   font-size: .7rem;
+}
+
+a.ce--comment-username:visited {
+  style: none;
 }
 
 .ce--comment-text {
