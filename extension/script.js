@@ -1,7 +1,20 @@
 'use strict'
 
+/*
+  Wasn't sure if I was going to add this, but anyone could find it if they tried.
+  Soundcloud still hasn't responded to my request for api access, but
+  even when/if they do, they updated their api to require auth on all calls, even for comments
+  which seems kind of dumb to me. I found an existing chrome extension which basically does the same
+  thing as this one, but you have to click the extension icon in the toolbar, too much work
+  In the souce code of that chrome extension I found this key, along with an earlier version of the
+  sdk which allows for fetching comments without auth.
+
+  This could stop working any time, and probably will soon, but it works as of 5/28/2017 :)
+*/
+
+const keyIFoundOnTheGround = "02d54efe6695649f5c72cae57841e44a"
 SC.initialize({
-  client_id: ""
+  client_id: keyIFoundOnTheGround
 })
 
 let activeUrl = null
