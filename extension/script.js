@@ -67,14 +67,13 @@ function updatePage(url) {
     newCommentsContainer.className = 'ce--comments'
 
     if (!comments.length) {
-      // const noComments = document.createElement('div')
-      // noComments.className = 'ce--no-comments'
-      // noComments.innerHTML = 'No comments yet'
-      // newCommentsContainer.append(noComments)
-      // parentContainer.append(newCommentsContainer)
+      const noComments = document.createElement('div')
+      noComments.className = 'ce--no-comments'
+      noComments.innerHTML = 'No comments yet'
+      newCommentsContainer.append(noComments)
+      parentContainer.append(newCommentsContainer)
       return
     }
-
 
     const header = document.createElement('div')
     header.className = 'ce--header'
@@ -127,5 +126,11 @@ function updatePage(url) {
 
   fetchComments(url)
     .then(attachComments)
-    .catch(err => console.error('err', err))
+    .catch(err => {
+      console.error(err)
+      
+      // revert to soundcloud comments
+      const soundcloudContainer = document.querySelector('.commentsList')
+      soundcloudContainer.className += ' ce--revert'
+    })
 }

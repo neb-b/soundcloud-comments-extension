@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+.commentsList.ce--revert {
+  display: block !important;
+}
+
 .ce--comments-list {
   padding-top: 30px;
 }
