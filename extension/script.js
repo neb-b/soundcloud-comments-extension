@@ -1,7 +1,7 @@
 'use strict'
 
 SC.initialize({
-  client_id: "02d54efe6695649f5c72cae57841e44a"
+  client_id: ""
 })
 
 let activeUrl = null
@@ -18,18 +18,15 @@ function millisToMinutesAndSeconds(millis) {
   return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-
-
 function updatePage(url) {
   function createComment(commentData) {
-    console.log('comentData', commentData);
 
     /*
-    <li commentContainer>
-      <span>{comment.timestamp}</span>
-      <div>
-        <div>{comment.user.userName}</div>
-        <div>{comment.body}</div>
+    <li class="ce-comment">
+      <div class="ce--comment-time">{comment.timestamp}</div>
+      <div class="ce--comment-content">
+        <div class="ce--comment-username">{comment.user.userName}</div>
+        <div class="ce--comment-content">{comment.body}</div>
       </div>
     </li>
     */
@@ -42,6 +39,7 @@ function updatePage(url) {
     timeEl.className = 'ce--comment-time'
 
     const commentContent = document.createElement('div')
+    commentContent.className = 'ce--comment-content'
 
     const userName = document.createElement('a')
     userName.innerHTML = commentData.user.username
@@ -52,7 +50,6 @@ function updatePage(url) {
     bodyEl.innerHTML = commentData.body
     bodyEl.className = 'ce--comment-text'
 
-    commentContent.className = 'ce--comment-content'
     commentContent.append(userName)
     commentContent.append(bodyEl)
     commentContainer.append(timeEl)
@@ -112,7 +109,6 @@ function updatePage(url) {
 
         return SC.get(commentsPath, (comments = [], err) => {
           if (err) {
-            console.log('sc.get', err);
             reject(err)
             return
           }
@@ -123,12 +119,11 @@ function updatePage(url) {
 		})
   }
 
-
   fetchComments(url)
     .then(attachComments)
     .catch(err => {
       console.error(err)
-      
+
       // revert to soundcloud comments
       const soundcloudContainer = document.querySelector('.commentsList')
       soundcloudContainer.className += ' ce--revert'
