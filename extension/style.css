@@ -1,3 +1,41 @@
-.ce--comments-list.loading {
-  margin-top: 20px;
+.commentsList {
+  display: none !important;
+}
+
+.ce--comments-list {
+  padding-top: 30px;
+}
+
+.ce--no-comments {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.ce--comment {
+  width: 100%;
+  padding-top: 10px;
+  min-height: 30px;
+}
+
+.ce--comment-time {
+  display: inline-block;
+  width: 10%;
+  /*padding-right: 10px;*/
+}
+
+.ce--comment-content {
+  display: inline-block;
+  /*float: left;*/
+  margin-left: 15%;
+}
+
+.ce--comment-username {
+  /*display: block;*/
+  color: #636363;
+  font-size: .7rem;
+}
+
+.ce--comment-text {
+
 }

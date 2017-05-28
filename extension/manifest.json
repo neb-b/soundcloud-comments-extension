@@ -10,7 +10,7 @@
     {
       "matches": ["*://*.soundcloud.com/*"],
       "css": ["style.css"],
-      "js": ["script.js"]
+      "js": ["sc_sdk.js", "script.js"]
     }
   ],
   "background": {
