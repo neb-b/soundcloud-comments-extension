@@ -12,30 +12,27 @@
   font-size: 1.5em;
 }
 
+.ce--list {
+  margin: 0;
+}
+
 .ce--comment {
-  width: 100%;
+  display: flex;
   padding-top: 10px;
   min-height: 30px;
 }
 
-.ce--comment-time {
-  display: inline-block;
-  width: 10%;
-  /*padding-right: 10px;*/
-}
-
 .ce--comment-content {
-  display: inline-block;
-  /*float: left;*/
-  margin-left: 15%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ce--comment-username {
-  /*display: block;*/
-  color: #636363;
+  color: #868686;
   font-size: .7rem;
 }
 
 .ce--comment-text {
-
+  padding: 10px 0;
 }

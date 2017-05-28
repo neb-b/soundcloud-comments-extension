@@ -42,11 +42,11 @@ function updatePage(url) {
 
     const commentContent = document.createElement('div')
 
-    const userName = document.createElement('span')
+    const userName = document.createElement('div')
     userName.innerHTML = commentData.user.username
     userName.className = 'ce--comment-username'
 
-    const bodyEl = document.createElement('span')
+    const bodyEl = document.createElement('div')
     bodyEl.innerHTML = commentData.body
     bodyEl.className = 'ce--comment-text'
 
