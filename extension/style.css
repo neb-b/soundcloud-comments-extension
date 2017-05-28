@@ -6,14 +6,15 @@
   display: block !important;
 }
 
-.ce--comments-list {
-  padding-top: 30px;
-}
-
 .ce--no-comments {
   padding-top: 50px;
   text-align: center;
   font-size: 1.5em;
+}
+
+.ce--header {
+  margin-top: -5px;
+  padding: 5px;
 }
 
 .ce--list {
@@ -37,7 +38,7 @@
   font-size: .7rem;
 }
 
-a.ce--comment-username:visited {
+a.ce--comment-username {
   style: none;
 }
 
